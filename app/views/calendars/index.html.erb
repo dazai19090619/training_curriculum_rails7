@@ -6,19 +6,20 @@
     <%= f.submit '保存' %>
   <% end %>
 
-<section class='calendar'>
+<% day[:month] %>/<% day[:date] %>
   <% @week_days.each do |day| %>
-    <article class='item'>
-      <p class='date'>
+     <div class='calendar'>
+      <div class='date'>
         <%= day[:month] %>/<%= day[:date] %>
-      </p>
-      <% if day[:plans].any? %>
-        <ul class='content'>
+         </div>
+       <ul class='content'>
+        <% if day[:plans].length != 0 %>
           <% day[:plans].each do |plan| %>
             <li class='plan-list'>・<%= plan %></li>
           <% end %>
+        <% end %>
         </ul>
       <% end %>
-    </article>
+    </div>
   <% end %>
-</section>
+</div>
