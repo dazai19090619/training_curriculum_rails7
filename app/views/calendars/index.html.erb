@@ -6,9 +6,9 @@
     <%= f.submit '保存' %>
   <% end %>
 
-<% day[:month] %>/<% day[:date] %>
+ <div class='calendar'>
   <% @week_days.each do |day| %>
-     <div class='calendar'>
+    <div class='item'>
       <div class='date'>
         <%= day[:month] %>/<%= day[:date] %>
          </div>
@@ -19,7 +19,6 @@
           <% end %>
         <% end %>
         </ul>
-      <% end %>
     </div>
   <% end %>
 </div>
